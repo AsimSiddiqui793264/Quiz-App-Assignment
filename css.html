@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .resultWindow {
+            display: none;
+        }
+
+        .redText {
+            color: red;
+          
+        }
+
+        .greenText {
+            color: green
+        }
+
+        #percentageShow {
+            border: 5px solid blue;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            
+        }
+
+        table {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <nav class="bg-primary innerPG">
+        <div class="container d-flex align-item-center justify-content-between">
+            <div class="d-flex gap-3  ">
+                <img src="https://www.pngmart.com/files/23/Free-Logos-PNG-File.png" width="50px" height="30px"
+                    class="mt-1" alt="">
+                <h3 class="text-light mt-1">Asim</h3>
+            </div>
+            <div>
+                <h3 class="text-light mt-1" onclick="window.history.back()"><i class="fa-solid fa-arrow-right-from-bracket"></i></h3>
+            </div>
+        </div>
+    </nav>
+
+    <div id="setDarkLightBtn" class="mt-2">
+        <button class="btn btn-primary" onclick="darkMode()">Set Dark</button>
+        <button class="btn btn-primary" onclick="lightMode()">Set Light</button>
+    </div>
+
+    <div class="container HTML-heading">
+        <h1 class="text-primary mt-5">CSS Quiz</h1>
+        <hr class="bg-primary">
+    </div>
+
+    <div class="accordion container" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Start Quiz
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table class="table table-bordered table-border-custom border-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Quiz Name</th>
+                                <th scope="col" class="text-center">CSS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Total Question</th>
+                                <td class="text-center">10</td>
+                            </tr>
+                            <tr>
+                                <th>Total Time</th>
+                                <td class="text-center">15 Minutes</td>
+                            </tr>
+                            <tr>
+                                <th>Passing Marks</th>
+                                <td class="text-center">70%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" id="startQuiz" class="btn btn-primary">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- //////////////// -->
+    <div class="container mt-2 " id="quizContainer">
+        <div class="quizWindow">
+            <h1 id="question" class=" border rounded shadow text-light  mt-5 mb-5" width="100%" height="50px">Question
+                will appear here</h1>
+            <ul type="none">
+                <li class="border rounded shadow p-3 mb-3 border-secondary">
+                    <input type="radio" name="quizOption" id="option1">
+                    <label for="option1" id="label1">Option1 will appear here</label>
+                </li>
+                <li class="border rounded shadow p-3 mb-3 border-secondary">
+                    <input type="radio" name="quizOption" id="option2">
+                    <label for="option2" id="label2">Option1 will appear here</label>
+                </li>
+                <li class="border rounded shadow p-3 mb-3 border-secondary">
+                    <input type="radio" name="quizOption" id="option3">
+                    <label for="option3" id="label3">Option1 will appear here</label>
+                </li>
+                <li class="border rounded shadow p-3 mb-3 border-secondary">
+                    <input type="radio" name="quizOption" id="option4">
+                    <label for="option4" id="label4">Option1 will appear here</label>
+                </li>
+            </ul>
+            <button type="button" onclick="next()" class="btn btn-primary mt-4">Next Question</button>
+        </div>
+    </div>
+
+    <div id="resultWindow" class="resultWindow container">
+        <table border="1px solid" class="table table-bordered border-dark" style="width: 50%; margin: auto; margin-bottom: 30PX;">
+            <h2 id="announce"></h2>
+
+            <tr>
+                <td>Total Question</td>
+                <td id="totalQue"></td>
+            </tr>
+
+            <tr>
+                <td>Correct Question</td>
+                <td id="correctQue"></td>
+            </tr>
+
+        </table>
+        <h4 id="percentageShow"></h4>
+        <button type="button" onclick="window.history.back()" id="goBack" class="btn btn-primary mt-3">Go Back</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="css.js"></script>
+</body>
+
+</html>
